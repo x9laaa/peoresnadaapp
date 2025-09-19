@@ -1,7 +1,6 @@
 <form [formGroup]="avisoForm" (ngSubmit)="guardar()">
   <ion-item>
-    <ion-input label="Título" labelPlacement="stacked"
-               formControlName="titulo" placeholder="Ej: Mascota perdida">
+    <ion-input label="Título" labelPlacement="stacked" formControlName="titulo" placeholder="Ej: Mascota perdida">
     </ion-input>
   </ion-item>
   <ion-text color="danger" *ngIf="f['titulo'].touched && f['titulo'].errors">
@@ -10,9 +9,8 @@
   </ion-text>
 
   <ion-item>
-    <ion-textarea label="Descripción" labelPlacement="stacked"
-                  formControlName="descripcion"
-                  placeholder="Detalla la información importante...">
+    <ion-textarea label="Descripción" labelPlacement="stacked" formControlName="descripcion"
+      placeholder="Detalla la información importante...">
     </ion-textarea>
   </ion-item>
   <ion-text color="danger" *ngIf="f['descripcion'].touched && f['descripcion'].errors">

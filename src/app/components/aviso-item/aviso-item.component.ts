@@ -1,7 +1,7 @@
-import { Component, EventEmitter, Input, Output, OnInit} from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  IonItem, IonThumbnail, IonImg, IonAvatar, IonIcon, IonLabel, IonButton, IonButtons // <-- AÑADIDO IonButtons
+  IonItem, IonThumbnail, IonImg, IonAvatar, IonIcon, IonLabel, IonButton
 } from '@ionic/angular/standalone';
 import { Aviso } from '../../services/avisos.service';
 import { addIcons } from 'ionicons';
@@ -14,16 +14,16 @@ import { trashOutline, newspaperOutline } from 'ionicons/icons';
   standalone: true,
   imports: [CommonModule, IonItem, IonThumbnail, IonImg, IonAvatar, IonIcon, IonLabel, IonButton]
 })
-export class AvisoItemComponent  implements OnInit {
+export class AvisoItemComponent implements OnInit {
 
-   @Input() aviso!: Aviso;
+  @Input() aviso!: Aviso;
   @Output() pedirEliminar = new EventEmitter<number>();
   solicitarEliminar() { this.pedirEliminar.emit(this.aviso.id); }
 
   constructor() {
-     addIcons({newspaperOutline,trashOutline});
-   }
+    addIcons({ newspaperOutline, trashOutline });
+  }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }

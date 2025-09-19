@@ -33,7 +33,6 @@ export class AvisosPage implements OnInit {
     this.avisos = await this.avisosSrv.listar();
   }
 
-  // llamado desde (pedirEliminar) del hijo
   abrirModalEliminar(id: number) {
     this.idAEliminar = id;
     this.isModalOpen = true;

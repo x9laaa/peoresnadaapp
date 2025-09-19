@@ -10,9 +10,6 @@ import { Aviso } from '../../services/avisos.service';
 import { addIcons } from 'ionicons';
 import { cameraOutline } from 'ionicons/icons';
 
-
-
-
 @Component({
   selector: 'app-aviso-form',
   templateUrl: './aviso-form.component.html',
@@ -62,7 +59,5 @@ export class AvisoFormComponent implements OnInit {
   }
 
   ngOnInit() { }
-
-
 
 }

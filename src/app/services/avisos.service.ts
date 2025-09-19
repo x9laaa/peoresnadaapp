@@ -12,6 +12,7 @@ export interface Aviso {
 @Injectable({
   providedIn: 'root'
 })
+
 export class AvisosService {
   private readonly STORAGE_KEY = 'avisos';
 
