@@ -1,0 +1,19 @@
+<ion-modal [isOpen]="isOpen" (didDismiss)="cancel.emit()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>{{ title }}</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="cancel.emit()">Cerrar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <p class="ion-margin-bottom">{{ message }}</p>
+      <ion-button color="danger" expand="block" (click)="confirm.emit()">Eliminar</ion-button>
+      <ion-button fill="outline" expand="block" (click)="cancel.emit()">Cancelar</ion-button>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+

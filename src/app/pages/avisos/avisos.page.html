@@ -1,0 +1,26 @@
+<app-header-toolbar titulo="Mis Avisos"></app-header-toolbar>
+
+<ion-content class="ion-padding">
+  <ion-list *ngIf="avisos?.length; else vacio">
+    <app-aviso-item
+      *ngFor="let a of avisos"
+      [aviso]="a"
+      (pedirEliminar)="abrirModalEliminar($event)">
+    </app-aviso-item>
+  </ion-list>
+
+  <ng-template #vacio>
+    <ion-item lines="none">
+      <ion-label color="medium">No hay avisos. Pulsa <strong>Nuevo</strong> para crear uno.</ion-label>
+    </ion-item>
+  </ng-template>
+
+  <!-- Modal de confirmación -->
+  <app-confirm-modal
+    [isOpen]="isModalOpen"
+    title="Confirmar eliminación"
+    message="¿Seguro que deseas eliminar esta publicación?"
+    (confirm)="confirmarEliminar()"
+    (cancel)="cerrarModal()">
+  </app-confirm-modal>
+</ion-content>

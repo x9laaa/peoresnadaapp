@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" *ngIf="showBack">
+      <ion-back-button defaultHref="/avisos"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ titulo }}</ion-title>
+    <ion-buttons slot="end" *ngIf="!showBack">
+      <ion-button [routerLink]="newLink">
+        <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+        Nuevo
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

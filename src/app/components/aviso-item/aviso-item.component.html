@@ -1,0 +1,20 @@
+<ion-item lines="full">
+  <ion-thumbnail slot="start" *ngIf="aviso.imagenDataUrl; else noimg">
+    <ion-img [src]="aviso.imagenDataUrl"></ion-img>
+  </ion-thumbnail>
+  <ng-template #noimg>
+    <ion-avatar slot="start">
+      <ion-icon name="newspaper-outline" style="width:100%;height:100%"></ion-icon>
+    </ion-avatar>
+  </ng-template>
+
+  <ion-label>
+    <h2>{{ aviso.titulo }}</h2>
+    <p>{{ aviso.descripcion }}</p>
+    <small>Fecha: {{ aviso.fechaISO | date:'yyyy-MM-dd' }}</small>
+  </ion-label>
+
+  <ion-button slot="end" fill="clear" color="danger" (click)="solicitarEliminar()"><ion-icon
+      name="trash-outline"></ion-icon></ion-button>
+
+</ion-item>

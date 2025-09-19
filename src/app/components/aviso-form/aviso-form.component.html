@@ -1,0 +1,38 @@
+<form [formGroup]="avisoForm" (ngSubmit)="guardar()">
+  <ion-item>
+    <ion-input label="Título" labelPlacement="stacked"
+               formControlName="titulo" placeholder="Ej: Mascota perdida">
+    </ion-input>
+  </ion-item>
+  <ion-text color="danger" *ngIf="f['titulo'].touched && f['titulo'].errors">
+    <small *ngIf="f['titulo'].errors['required']">El título es obligatorio.</small>
+    <small *ngIf="f['titulo'].errors['minlength']">Mínimo 5 caracteres.</small>
+  </ion-text>
+
+  <ion-item>
+    <ion-textarea label="Descripción" labelPlacement="stacked"
+                  formControlName="descripcion"
+                  placeholder="Detalla la información importante...">
+    </ion-textarea>
+  </ion-item>
+  <ion-text color="danger" *ngIf="f['descripcion'].touched && f['descripcion'].errors">
+    <small *ngIf="f['descripcion'].errors['required']">La descripción es obligatoria.</small>
+    <small *ngIf="f['descripcion'].errors['minlength']">Mínimo 20 caracteres.</small>
+  </ion-text>
+
+  <ion-item lines="none" class="ion-margin-top">
+    <ion-button type="button" (click)="tomarFoto()">
+      <ion-icon slot="start" name="camera-outline"></ion-icon>
+      Tomar Foto
+    </ion-button>
+  </ion-item>
+
+  <ion-card *ngIf="imagenDataUrl" class="ion-margin-top">
+    <ion-img [src]="imagenDataUrl"></ion-img>
+    <ion-card-content><small>Vista previa</small></ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" class="ion-margin-top" type="submit" [disabled]="avisoForm.invalid">
+    Guardar Aviso
+  </ion-button>
+</form>
